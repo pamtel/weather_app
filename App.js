@@ -20,6 +20,7 @@ export default function App() {
         setErrorMessage("Access to location is needed to run the app");
         return;
       }
+
       const location = await Location.getCurrentPositionAsync();
 
       const { latitude, longitude } = location.coords;
@@ -39,6 +40,10 @@ export default function App() {
       setErrorMessage(error.message);
     }
   }
+
+
+
+
   if (currentWeather) {
     const {
       main: { temp },
